@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
+	"github.com/fenwickelliott/xplat"
 	"golang.org/x/oauth2"
 )
 
@@ -34,7 +35,8 @@ func main() {
 			TokenURL: "https://accounts.google.com/o/oauth2/token",
 		},
 	}
-	fmt.Println(conf.AuthCodeURL("rabbits"))
+	// fmt.Println(conf.AuthCodeURL("rabbits"))
+	xplat.Openbrowser(conf.AuthCodeURL("rabbits"))
 
 }
 
